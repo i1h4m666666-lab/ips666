@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Ilham Prakoso Sakti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #3b82f6;
+            transform: translateX(-50%);
+        }
+
+        .profile-image-container {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 8px 16px;
+            cursor: pointer;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .custom-file-upload:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect top-0 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">ILHAM.</span>
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#home" class="hover:text-blue-600 transition">Beranda</a>
+                <a href="#about" class="hover:text-blue-600 transition">Tentang</a>
+                <a href="#education" class="hover:text-blue-600 transition">Pendidikan</a>
+                <div class="h-4 w-px bg-slate-300"></div>
+                <a href="https://instagram.com/ihmps_" target="_blank" class="text-lg hover:text-pink-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/088008800880" target="_blank" class="text-lg hover:text-green-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <button class="md:hidden text-slate-600">
+                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                    Halo, Selamat Datang!
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                     <span class="text-blue-600">Ilham Prakoso Sakti</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-lg">
+                    Seorang pelajar berusia 18 tahun dari Magetan yang memiliki semangat tinggi dalam belajar dan berorganisasi. Saat ini sedang menempuh pendidikan di SMA Negeri 1 Magetan.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#about" class="px-8 py-3 bg-blue-600 text-white rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition">Profil Saya</a>
+                    <a href="https://wa.me/088008800880" target="_blank" class="px-8 py-3 bg-green-500 text-white rounded-xl shadow-lg shadow-green-200 hover:bg-green-600 transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center gap-6">
+                <div class="relative profile-image-container w-full max-w-sm">
+                    <div class="w-full aspect-square bg-gradient-to-tr from-blue-600 to-indigo-400 rounded-[2rem] rotate-3 absolute -z-10 opacity-20 scale-105"></div>
+                    
+                    <div class="bg-white p-3 rounded-[2rem] shadow-2xl border border-slate-100 overflow-hidden relative">
+                        <img id="profile-pic" 
+                             src="https://i.ibb.co.com/5hQpb1xM/Whats-App-Image-2026-01-19-at-10-13-30-1.jpg" 
+                             alt="Foto Ilham Prakoso Sakti" 
+                             class="rounded-[1.5rem] w-full h-full object-cover aspect-square bg-slate-100">
+                        
+                        <div class="absolute bottom-6 left-6 right-6 p-4 glass-effect rounded-2xl border border-white/50 shadow-lg">
+                            <p class="font-bold text-slate-800">Ilham Prakoso Sakti</p>
+                            <p class="text-xs text-blue-600">Siswa SMA Negeri 1 Magetan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <label for="image-upload" class="custom-file-upload shadow-sm hover:shadow-md">
+                        <i class="fa-solid fa-camera mr-2"></i> Ganti Foto Saya
+                    </label>
+                    <input id="image-upload" type="file" accept="image/*" class="hidden" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Mengenal Saya Lebih Dekat</h2>
+                <div class="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-4">
+                    <div class="p-6 bg-slate-50 rounded-2xl flex items-start gap-4 hover:shadow-md transition">
+                        <div class="p-3 bg-blue-100 text-blue-600 rounded-xl">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Biodata Singkat</h3>
+                            <p class="text-slate-600 text-sm mt-1">Anak ke-1 dari 2 bersaudara. Berdomisili di Candirejo, Magetan.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-2xl flex items-start gap-4 hover:shadow-md transition">
+                        <div class="p-3 bg-green-100 text-green-600 rounded-xl">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Hobi & Minat</h3>
+                            <p class="text-slate-600 text-sm mt-1">Sangat gemar bermain dan memiliki ketertarikan pada olahraga Basket.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-6 bg-slate-50 rounded-2xl flex items-start gap-4 hover:shadow-md transition">
+                        <div class="p-3 bg-orange-100 text-orange-600 rounded-xl">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Alamat</h3>
+                            <p class="text-slate-600 text-sm mt-1">Desa Candirejo RT.04 RW.02, Magetan, Jawa Timur.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-2xl flex items-start gap-4 hover:shadow-md transition">
+                        <div class="p-3 bg-purple-100 text-purple-600 rounded-xl">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Pendidikan Saat Ini</h3>
+                            <p class="text-slate-600 text-sm mt-1">Siswa di SMA Negeri 1 Magetan (Angkatan 3 tahun).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Timeline -->
+    <section id="education" class="py-20 px-4 bg-slate-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Perjalanan Pendidikan</h2>
+                <div class="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative timeline-line">
+                <!-- PAUD -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row-reverse">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white text-[10px]">1</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-md w-full md:w-5/12 px-6 py-4 border border-slate-100">
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">2 Tahun</span>
+                        <h3 class="font-bold text-lg mb-1">PAUD Marsudisiwi Magetan</h3>
+                        <p class="text-sm text-slate-600">Langkah pertama saya dalam dunia pendidikan selama 2 tahun yang penuh kenangan.</p>
+                    </div>
+                </div>
+
+                <!-- TK -->
+                <div class="mb-12 flex justify-between items-center w-full">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white text-[10px]">2</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-md w-full md:w-5/12 px-6 py-4 border border-slate-100">
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">2 Tahun</span>
+                        <h3 class="font-bold text-lg mb-1">TK Aisyah 7 Magetan</h3>
+                        <p class="text-sm text-slate-600">Meraih prestasi sebagai <strong class="text-blue-600">Juara Harapan 2</strong> dalam lomba berhitung tingkat TK.</p>
+                    </div>
+                </div>
+
+                <!-- SD/MIN -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row-reverse">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white text-[10px]">3</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-md w-full md:w-5/12 px-6 py-4 border border-slate-100">
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">6 Tahun (Mulai Usia 7)</span>
+                        <h3 class="font-bold text-lg mb-1">MIN 3 Magetan</h3>
+                        <p class="text-sm text-slate-600">Mulai mengenal dunia sekolah dasar dan aktif belajar bersama teman-teman.</p>
+                    </div>
+                </div>
+
+                <!-- SMP -->
+                <div class="mb-12 flex justify-between items-center w-full">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white text-[10px]">4</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-md w-full md:w-5/12 px-6 py-4 border border-slate-100">
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">3 Tahun (Mulai Usia 13)</span>
+                        <h3 class="font-bold text-lg mb-1">SMP Negeri 3 Magetan</h3>
+                        <p class="text-sm text-slate-600 mb-2">Sangat aktif dalam ekstrakurikuler <strong class="text-blue-600 text-xs">BASKET</strong> dan pernah mengikuti event lomba sekolah.</p>
+                    </div>
+                </div>
+
+                <!-- SMA -->
+                <div class="mb-12 flex justify-between items-center w-full md:flex-row-reverse">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-blue-600 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white text-[10px]">5</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-2xl shadow-md w-full md:w-5/12 px-6 py-4 border-2 border-blue-200 bg-blue-50/50">
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-wider">Sedang Ditempuh</span>
+                        <h3 class="font-bold text-lg mb-1">SMA Negeri 1 Magetan</h3>
+                        <p class="text-sm text-slate-600">Fokus menyelesaikan jenjang menengah atas dengan semangat juang di sekolah terbaik di Magetan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="py-12 bg-slate-900 text-white px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">Mari Terhubung</h2>
+            <div class="flex justify-center space-x-6 mb-8 text-2xl">
+                <a href="https://instagram.com/ihmps_" target="_blank" class="hover:text-pink-400 transition transform hover:-translate-y-1">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/088008800880" target="_blank" class="hover:text-green-400 transition transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="space-y-2">
+                <p class="text-slate-300 font-medium">Ilham Prakoso Sakti</p>
+                <p class="text-slate-400 text-sm">IG: @ihmps_ | WA: 088008800880</p>
+                <p class="text-slate-500 text-sm max-w-xs mx-auto mt-4">
+                    Desa Candirejo RT.04 RW.02, Magetan, Jawa Timur.
+                </p>
+            </div>
+            <div class="mt-10 pt-8 border-t border-slate-800 text-slate-600 text-xs uppercase tracking-widest">
+                &copy; 2024 Design by Ilham
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const imageUpload = document.getElementById('image-upload');
+        const profilePic = document.getElementById('profile-pic');
+
+        imageUpload.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePic.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 64,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
